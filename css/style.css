@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*text-align: center;*/
+}
+
+.container {
+    width: 75%;
+    text-align: center;   /*all elements in container div aligned to center*/
+    margin: 0 auto;         /*moves container to center*/
+    margin: 3rem; 
+}
+
+html {
+    font-family: 'Roboto';
+    color: #151515;
+}
+
+.movie-card {
+    margin-top: 5rem;
+    height: 800px;
+}
+
+.movie-title {
+    text-transform: uppercase;
+    animation: grow 2s ease-in-out forwards;
+}
+
+@keyframes grow {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+.movie-poster-container img {
+    margin-top: 2rem;
+    height: 500px;
+    border-radius:5px;
+    animation: fade-in 3.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.movie-rating {
+    display: inline-block;
+    border: 1px solid #151515;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+.movie-duration {
+    margin-left: 1rem;
+    letter-spacing: 0.2rem;
+}
+
+.movie-duration:before {
+    content:"\2022";
+}
+
+.movie-info-quote {
+    color: #151515a4;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-overview-title {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+}
+
+.movie-info-actions {
+    font-size:1.1rem;
+}
+
+.movie-info-actions ul {
+    list-style: none;
+}
+
+.movie-info-actions ul li {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(3, 37, 65);
+    transform-origin: top center;
+    animation: swing 2s ease infinite;
+}
+
+@keyframes swing {
+	20% { transform: rotate(15deg); }	
+	40% { transform: rotate(-10deg); }
+	60% { transform: rotate(5deg); }	
+	80% { transform: rotate(-5deg); }	
+	100% { transform: rotate(0deg); }
+}
+
+.movie-info-actions ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.modal {
+    display: none;                  /*peidab modal'i akna ära*/
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(93, 83, 83, 0.644);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    text-align: center;               /*reastab kõik text-elemendid keskele*/
+}
+
+.modal-content {
+    background-color: blanchedalmond;
+    margin: 5% auto;                    /*auto joondab el keskele*/
+    padding: 5rem;
+    width: 600px;
+    height: 750px;
+    animation: zoom-in 5s;
+}
+
+@keyframes zoom-in {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+.closeBtn {
+    float: right;
+    cursor: pointer;                /*peale liikudes muutub hiire ikoon käeks*/
+    font-size: 2rem;
+}
+
+.movie-poster-modal {
+    width: 300px;
+    margin: 5% auto; 
+}
+
+.movie-poster {
+    width: 300px;
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0
+    box-sizing: border-box;
+}
+
+
+.carousel {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;         /*noolega liikumise nuppude kuvamiseks*/
+}
+
+.carousel img {
+    width: 100%;
+}
+
+/*ainult ühe pildi kuvamine*/
+.carousel .carousel__item, 
+.carousel .carousel__item--hidden{
+    display: none;
+}
+
+.carousel .carousel__item--visible {
+    display: block;
+    animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/*nupukeste asukoha ja välimuse muutmine*/
+.carousel .carousel__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bolder;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-color: rgba(212, 216, 215, 0.418);
+    font-size: 2rem;
+    color: #fff;
+    margin: 0.5rem;             /*lükkab buttoni pildi äärest eemale-keskele*/
+}
+
+footer {
+    margin-top: 20rem;
+    text-align: center;     /*joondab kogu sisu keskele*/
+    color: #777;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #777;
+}
